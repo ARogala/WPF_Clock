@@ -1,0 +1,26 @@
+﻿<Window x:Class="Clock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Clock" x:Name="window"
+        mc:Ignorable="d"
+        Title="Clock" Height="100" Width="400"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <Window.Resources>
+        <FontFamily x:Key="Digital-7" >/Font/#Digital-7</FontFamily>
+    </Window.Resources>
+    <Border CornerRadius="25" BorderBrush="Black" BorderThickness="2" Padding="6" >
+        <Border.Background>
+            <SolidColorBrush Opacity="0.5" Color="Black"/>
+        </Border.Background>
+        <Grid>
+            <Grid VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="230" Margin="0,5,5,0" >
+                <Button Content="*"  Width="25" Margin="190,0,6,0" Click="Close_Click"/>
+                <Button Content="[]"  Width="25"  Margin="160,0,32,0" Click="Maximize_Click"/>
+                <Button Content="-" Width="25"  Margin="115,0,44,0" Click="Minimize_Click"/>
+            </Grid>
+            <Label Name="lblTime" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#3bfe04" FontFamily="{StaticResource Digital-7}"/>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Font\digital-7.ttf" />
+    <None Remove="Font\game_over.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Font\digital-7.ttf" />
+    <Resource Include="Font\game_over.ttf" />
+  </ItemGroup>
+
+</Project>
