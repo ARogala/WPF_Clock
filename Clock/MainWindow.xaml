@@ -16,10 +16,27 @@
         </Border.Background>
         <Grid>
             <Grid VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="230" Margin="0,5,5,0" >
-                <Button Content="X"  Width="25" Margin="190,0,6,0" Click="Close_Click" Background="#40C0C0" BorderThickness="0">
+                <Button Content="X" FontWeight="Bold" Width="25" Margin="190,0,6,0" Click="Close_Click" BorderThickness="0">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#40C0C0"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}">
+                                            <ContentPresenter  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#0040FF"/>
+                                </Trigger>
+                            </Style.Triggers>
                         </Style>
                     </Button.Resources>
                 </Button>
