@@ -10,15 +10,21 @@
     <Window.Resources>
         <FontFamily x:Key="Digital-7" >/Font/#Digital-7</FontFamily>
     </Window.Resources>
-    <Border CornerRadius="25" BorderBrush="Black" BorderThickness="2" Padding="6" >
+    <Border CornerRadius="25" BorderBrush="Black" BorderThickness="0" Padding="6" >
         <Border.Background>
             <SolidColorBrush Opacity="0.5" Color="Black"/>
         </Border.Background>
         <Grid>
             <Grid VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="230" Margin="0,5,5,0" >
-                <Button Content="*"  Width="25" Margin="190,0,6,0" Click="Close_Click"/>
-                <Button Content="[]"  Width="25"  Margin="160,0,32,0" Click="Maximize_Click"/>
-                <Button Content="-" Width="25"  Margin="115,0,44,0" Click="Minimize_Click"/>
+                <Button Content="X"  Width="25" Margin="190,0,6,0" Click="Close_Click" Background="#40C0C0" BorderThickness="0">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <!-- <Button Content="[]"  Width="25"  Margin="160,0,32,0" Click="Maximize_Click"/>
+                <Button Content="-" Width="25"  Margin="115,0,44,0" Click="Minimize_Click"/> -->
             </Grid>
             <Label Name="lblTime" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#3bfe04" FontFamily="{StaticResource Digital-7}"/>
         </Grid>
