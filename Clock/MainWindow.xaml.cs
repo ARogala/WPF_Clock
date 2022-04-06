@@ -31,14 +31,27 @@ namespace Clock
             this.ShowInTaskbar = false;
 
             DispatcherTimer timer = new DispatcherTimer(); 
-            timer.Tick += new EventHandler(timer_Tick);
+            timer.Tick += new EventHandler(Timer_Tick);
             timer.Interval = new TimeSpan(0, 0, 0, 1);
             timer.Start();
+            SetDate();
         }
 
-        void timer_Tick(object sender, EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
-            lblTime.Content = DateTime.Now.ToLongTimeString();
+            DateTime now = DateTime.Now;  
+            lblTime.Content = now.ToLongTimeString();
+            //set date at midnight
+            if(now.ToLongTimeString() == "12:00:00 AM")
+            {
+                SetDate();
+            }     
+        }
+
+        private void SetDate()
+        {
+            DateTime now = DateTime.Now;
+            lblDate.Content = now.ToLongDateString();
         }
 
         private void Settings_Click(object sender, RoutedEventArgs e)
