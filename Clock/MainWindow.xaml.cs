@@ -30,10 +30,9 @@ namespace Clock
             //hide running app from taskbar
             this.ShowInTaskbar = false;
 
-
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += timer_Tick;
+            DispatcherTimer timer = new DispatcherTimer(); 
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Interval = new TimeSpan(0, 0, 0, 1);
             timer.Start();
         }
 
@@ -42,28 +41,14 @@ namespace Clock
             lblTime.Content = DateTime.Now.ToLongTimeString();
         }
 
-
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            window.Close();
+        }
         //window stuff
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             window.Close();
-        }
-
-        private void Maximize_Click(object sender, RoutedEventArgs e)
-        {
-            if (window.WindowState == WindowState.Normal)
-            {
-                window.WindowState = WindowState.Maximized;
-            }
-            else
-            {
-                window.WindowState = WindowState.Normal;
-            }
-        }
-
-        private void Minimize_Click(object sender, RoutedEventArgs e)
-        {
-            window.WindowState = WindowState.Minimized;
-        }
+        }  
     }
 }
