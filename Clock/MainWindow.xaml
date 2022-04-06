@@ -50,7 +50,7 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-
+                <!--
                 <Button Content="Settings" FontWeight="Bold" Width="60" Margin="0,0,310,0" Click="Settings_Click" BorderThickness="0">
                     <Button.Resources>
                         <Style TargetType="Border">
@@ -75,6 +75,7 @@
                         </Style>
                     </Button.Resources>
                 </Button>
+                -->
             </Grid>
             <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Name="lblTime" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#3bfe04" FontFamily="{StaticResource Digital-7}" />
             <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Name="lblDate" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#3bfe04" FontFamily="{StaticResource Digital-7}" />
