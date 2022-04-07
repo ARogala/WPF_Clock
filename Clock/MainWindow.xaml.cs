@@ -21,6 +21,7 @@ namespace Clock
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Settings clockSettings = new Settings();
         public MainWindow()
         {
             InitializeComponent();
@@ -35,6 +36,10 @@ namespace Clock
             timer.Interval = new TimeSpan(0, 0, 0, 1);
             timer.Start();
             SetDate();
+
+           
+            clockSettings.ColorChoice = "#FF3131";
+            this.DataContext = clockSettings;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -56,12 +61,13 @@ namespace Clock
 
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
-            window.Close();
+            SettingsWindow settingsWindow = new SettingsWindow();
+            settingsWindow.Show();
         }
         //window stuff
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             window.Close();
-        }  
+        }
     }
 }
