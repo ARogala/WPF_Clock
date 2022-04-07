@@ -78,9 +78,9 @@
 
                 
             </Grid>
-            <StackPanel Grid.Column="0" Grid.Row="0">
-                <RadioButton Name="rbGreen" Checked="GreenChecked" Foreground="#3bfe04" IsChecked="True">Neon Green</RadioButton>
-                <RadioButton Name="rbRed" Checked="RedChecked" Foreground="#FF3131">Neon Red</RadioButton>
+            <StackPanel Grid.Column="0" Grid.Row="0" Margin="5,2,0,5">
+                <RadioButton Name="rbGreen" Checked="GreenChecked" Foreground="#3bfe04" IsChecked="True">Green</RadioButton>
+                <RadioButton Name="rbRed" Checked="RedChecked" Foreground="#FF3131">Red</RadioButton>
             </StackPanel>
             <!--#FF3131-->
             <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Name="lblTime" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{Binding Path=ColorChoice, Mode=OneWay}" FontFamily="{StaticResource Digital-7}" />
