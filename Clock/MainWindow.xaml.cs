@@ -37,8 +37,6 @@ namespace Clock
             timer.Start();
             SetDate();
 
-           
-            clockSettings.ColorChoice = "#FF3131";
             this.DataContext = clockSettings;
         }
 
@@ -61,13 +59,26 @@ namespace Clock
 
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
-            SettingsWindow settingsWindow = new SettingsWindow();
-            settingsWindow.Show();
+            //once i figure out how change color from radio btn on another window add one.
+            //SettingsWindow settingsWindow = new SettingsWindow();
+            //settingsWindow.Show();
+
         }
         //window stuff
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             window.Close();
         }
+
+        private void GreenChecked(object sender, RoutedEventArgs e)
+        {         
+            clockSettings.ColorChoice = "#3bfe04";        
+        }
+
+        private void RedChecked(object sender, RoutedEventArgs e)
+        {
+            clockSettings.ColorChoice = "#FF3131";
+        }
+
     }
 }
